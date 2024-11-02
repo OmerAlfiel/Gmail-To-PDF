@@ -1,3 +1,58 @@
+# Project Description: Gmail to PDF Converter and Uploader
+## Overview
+- This project is a NestJS-based application that automates the process of fetching emails from Gmail, converting them into PDF files, and uploading these PDFs to a specified Google Drive folder. The application leverages Google APIs for Gmail and Drive, and uses pdf-lib for PDF generation. The project is structured into several modules, each responsible for a specific part of the functionality.
+
+## Key Features
+- OAuth2 Authentication: Securely authenticate with Google to access Gmail and Drive APIs.
+- Email Fetching: Fetch specific emails from Gmail based on search criteria.
+- PDF Generation: Convert email content into well-formatted PDF files.
+- Google Drive Upload: Upload generated PDF files to a specified Google Drive folder.
+- Cron Jobs: Automate the process to run at specified intervals using cron jobs.
+## Install Dependencies:
+```bash
+$ npm install
+```
+## Set Up Google OAuth Credentials:
+
+- Create a credentials.json file in the root directory with your Google API credentials.
+- Ensure you have a token.json file or be ready to generate one through the OAuth flow.
+## Run the Application:
+```bash
+$ npm run start
+```
+## Authenticate with Google:
+
+- Open your browser and navigate to http://localhost:3000/auth/google.
+- Follow the OAuth flow to authenticate and authorize the application.
+- The tokens will be stored in token.json.
+## Test the Full Functionality:
+
+- Open your browser and navigate to http://localhost:3000/process-emails?query=your-query&folderId=your-folder-id.
+- Replace your-query with the search criteria for the emails you want to fetch.
+- Replace your-folder-id with the ID of the Google Drive folder where you want to upload the PDFs.
+## Verify the Results:
+
+- Check the console output for logs indicating the progress of fetching emails, creating PDFs, and uploading them to Google Drive.
+- Verify that the PDFs are created in the pdf-reports directory.
+- Verify that the PDFs are uploaded to the specified Google Drive folder.
+  ### The credentials.json file contains the OAuth 2.0 client credentials for your Google API project. This file is essential for authenticating your application with Google services such as Gmail and Google Drive.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
